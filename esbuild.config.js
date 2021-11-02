@@ -8,12 +8,12 @@ esbuild
   .build({
     entryPoints: ['./src/index.ts'],
     outdir: 'dist',
-    // outfile: './dist/index.js',
     bundle: true,
     platform: 'node',
     sourcemap: true,
     target: 'node14',
     plugins: [esbuildDecorators()],
+    // plugins: [esbuildDecorators(),nodeExternalsPlugin()], works when we do not bundle externals
   })
   .catch((err) => {
     console.log(err);
